@@ -1,0 +1,53 @@
+.table-mobile {
+    b { display: none; }
+    @media (max-width: 768px) {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        thead { display: none; }
+        tbody { //needed to win specificity contest
+            tr { //needed to win specificity contest
+                td {
+                    display: block;
+                    border: 0;
+                    padding-top: 0;
+                    padding-left: 150px;
+                    padding-right: 5px;
+                    padding-bottom: 5px;
+                    text-indent: -150px;
+                    &:first-of-type {
+                        padding-top: 5px;
+                    }
+                    &:last-of-type {
+                        border-bottom: 1px solid #ccc;
+                        padding-bottom: 5px;
+                    }
+                    b {
+                        display: inline-block;
+                        min-width: 150px;
+                        text-indent: 10px;
+                        font-weight: bold;
+                        vertical-align: top;
+                        &:after { content: ":\00a0"; }
+                    }
+                    > input {
+                        display: inline-block;
+                        width: initial;
+                    }
+                    .input-group {
+                        display: inline-block;
+                        width: initial;
+                        input {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.table-fixedheader {
+    .table {
+        thead { background-color: white; }
+    }
+}
